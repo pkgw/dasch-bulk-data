@@ -1,11 +1,11 @@
-//! Demonstrate how to read a local copy of a refcat database dump.
+//! Demonstrate how to extract DASCH lightcurve data for a cataloged source.
 //!
-//! You should not use this code for anything besides exploratory testing! For
-//! almost all realistic use cases, the proper way to use the database dump file
-//! will be to load it into a true database of your own (SQLite, PostgreSQL,
-//! etc.) and query that database. As written, this code has to read and
-//! decompress the full dump file from the start in order to find any record,
-//! which is wildly inefficient.
+//! Unlike some of the other examples, this code is fast as-is, because the
+//! DASCH data files are designed to ensure that precisely this operation is
+//! speedy in the APIs. If you want to extract your own lightcurves from the
+//! bulk data files, your code should basically follow this structure. You will
+//! probably want to look at *many* more of the columns available for each
+//! lightcurve point, though.
 
 use binary_serde::{BinarySerde, Endianness};
 use clap::Parser;
