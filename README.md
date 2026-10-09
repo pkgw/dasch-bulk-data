@@ -79,3 +79,30 @@ to use them.
 
 For some purposes, you might wish to make use of these limiting-magnitude files
 on their own, without needing the bulk lightcurve data.
+
+### Per-Exposure Photometry Data
+
+The example program `extract_exp_phot` shows how to extract photometry data for
+the sources found in a single exposure. This can include uncataloged sources
+that might possibly transients, although they will usually be defects.
+
+Due to the way that the DASCH photometry data files are laid out, this operation
+is extremely inefficient no matter what language you are using. If you want to
+process photometry data in this way, you will probably need to reprocess the
+DASCH-provided data files to rearrange the data into an organization that better
+supports this kind of processing.
+
+Run the sample as:
+
+```
+cargo run --example extract_exp_phot -- \
+  --series a \
+  --plate-num 2352 \
+  --sol-num 0 \
+  --gsc-bin-index 24474615 \
+  --mega-index-file apass_megaindex.idx \
+  --photdata-file apass_mags/24473600.dat
+```
+
+Consult the code to this example to understand the format and semantics of the
+"mega-index" file.

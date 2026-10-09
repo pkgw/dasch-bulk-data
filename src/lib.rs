@@ -9,3 +9,4 @@ pub mod gscbin;
 pub mod phot_data;
 pub mod plates_dump;
 pub mod refcat_dump;
+pub mod series_ids;

@@ -1,3 +1,7 @@
+//! Helper code needed to demonstrate lookups into the limiting-magnitude data
+//! files. This implements the GSC binning scheme used in various DASCH data
+//! products.
+
 /// Degree-to-radian conversion factor
 pub const D2R: f64 = 0.017453292519943295;
 
@@ -5,8 +9,6 @@ pub const D2R: f64 = 0.017453292519943295;
 pub struct GscBinning {
     bin_size: f64,
     dec_bins: usize,
-    // total_gsc_bins: usize,
-    // max_ra_bins: usize,
     master_index: Vec<GscBinIndex>,
 }
 

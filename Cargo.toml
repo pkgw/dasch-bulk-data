@@ -7,6 +7,7 @@ edition = "2024"
 base64 = "0.22"
 binary_serde = "1.0"
 flate2 = "1.1"
+once_cell = "^1.20"
 serde = { version = "1.0", features = ["derive"] }
 serde_bytes = "0.11"
 serde_dynamo = { version = "4.2" }
