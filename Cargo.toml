@@ -1,0 +1,13 @@
+[package]
+name = "dasch-backend"
+version = "0.0.0"
+edition = "2024"
+
+[dependencies]
+base64 = "0.22"
+binary_serde = "1.0"
+flate2 = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_bytes = "0.11"
+serde_dynamo = { version = "4.2" }
+serde_json = "1.0"
