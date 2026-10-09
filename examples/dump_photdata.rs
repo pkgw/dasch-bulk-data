@@ -2,7 +2,7 @@
 
 use binary_serde::{BinarySerde, Endianness};
 use clap::Parser;
-use dasch_backend::phot_data::MagRecord;
+use dasch_bulk_data::phot_data::MagRecord;
 use std::{
     error::Error,
     fs::File,

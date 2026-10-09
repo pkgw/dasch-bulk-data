@@ -1,21 +1,25 @@
-# dasch-backend
+# dasch-bulk-data
 
-This repository provides a minimal skeleton of Rust code that can parse the
-files that are provided to people who obtain copies of the [DASCH DR7]
-bulk-access data files.
+This repository provides a minimal skeleton of Rust code that demonstrates how
+to parse the files that are provided to people who obtain copies of the [DASCH
+DR7] bulk-access data files.
 
 [DASCH DR7]: https://dasch.cfa.harvard.edu/dr7/
 
-Even if you don't use Rust, you can examine the code here to understand the file
-formats and how to make use of them.
+Even if you don't use Rust, you can examine the code here (alongside the DASCH
+DR7 documentation) to understand the file formats and how to make use of them.
+
+Unfortunately, there is not currently funding to be able to provide support to
+users who wish to explore the DASCH bulk data products. You should expect to
+have to figure a lot of things out on your own.
 
 
-## Examples
+## Major File Types and Examples
 
 The `examples/` directory contains several example programs that show how to
 use the bulk-data files. **However**, these programs are meant for instruction
 only — they will be devastatingly inefficient for the sorts of analyses that
-would motivate you to download the bulk data files in the first place
+would motivate you to download the bulk data files in the first place.
 
 ### The Plates Database Dump
 
@@ -106,3 +110,16 @@ cargo run --example extract_exp_phot -- \
 
 Consult the code to this example to understand the format and semantics of the
 "mega-index" file.
+
+
+## Authorship
+
+This sample code was written by Peter K. G. Williams ([@pkgw]).
+
+[@pkgw]: https://github.com/pkgw/
+
+
+## Legalities
+
+Copyright to this code is owned by the President and Fellows of Harvard College.
+It is open-source software licensed under the MIT License.

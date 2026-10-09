@@ -9,7 +9,7 @@
 
 use binary_serde::{BinarySerde, Endianness};
 use clap::Parser;
-use dasch_backend::{
+use dasch_bulk_data::{
     gscbin::GscBinning,
     phot_data::{LimitsIndexRecord, LimitsPlateRecord, MagRecord},
 };

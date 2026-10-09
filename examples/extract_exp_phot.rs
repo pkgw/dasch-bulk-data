@@ -11,7 +11,7 @@
 
 use binary_serde::{BinarySerde, Endianness};
 use clap::Parser;
-use dasch_backend::{
+use dasch_bulk_data::{
     phot_data::{MagRecord},
     series_ids::PLATE_ID_BY_SERIES,
 };

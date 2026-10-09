@@ -8,7 +8,7 @@
 //! which is wildly inefficient.
 
 use clap::Parser;
-use dasch_backend;
+use dasch_bulk_data::refcat_dump::RefcatItemRecord;
 use flate2::read::GzDecoder;
 use std::{error::Error, fs::File, io::{BufRead, BufReader}, path::PathBuf};
 
@@ -51,7 +51,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         let noitem_line = &line[8..line.len() - 1];
 
         let item: serde_dynamo::Item = serde_json::from_str(noitem_line)?;
-        let rec: dasch_backend::refcat_dump::RefcatItemRecord = serde_dynamo::from_item(item)?;
+        let rec: RefcatItemRecord = serde_dynamo::from_item(item)?;
 
         if rec.ref_number == args.refnum {
             println!("{} ra = {} deg", args.refnum, rec.ra);
