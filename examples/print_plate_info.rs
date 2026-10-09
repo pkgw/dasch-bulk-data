@@ -1,6 +1,6 @@
 //! Demonstrate how to read a local copy of the plate database dump.
 //!
-//! You should not use this code for anything besides exploratory testing. For
+//! You should not use this code for anything besides exploratory testing! For
 //! almost all realistic use cases, the proper way to use the database dump file
 //! will be to load it into a true database of your own (SQLite, PostgreSQL,
 //! etc.) and query that database. As written, this code has to read and
