@@ -12,7 +12,7 @@
 use serde::Deserialize;
 
 /// A top-level record in the plates database.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct PlatesRecord {
     pub astrometry: Option<PlatesAstrometryRecord>,
@@ -24,7 +24,7 @@ pub struct PlatesRecord {
 }
 
 /// Information about a plate's astrometric solution.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct PlatesAstrometryRecord {
     #[serde(default, with = "serde_bytes")]
@@ -39,7 +39,7 @@ pub struct PlatesAstrometryRecord {
 }
 
 /// Information about an exposure associated with a plate.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct PlatesExposureRecord {
     pub center_source: Option<String>,
@@ -53,7 +53,7 @@ pub struct PlatesExposureRecord {
 }
 
 /// Information about a mosaic (DASCH scanned image) associated with a plate.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct PlatesMosaicRecord {
     #[serde(default, with = "serde_bytes")]
@@ -86,7 +86,7 @@ pub struct PlatesMosaicRecord {
 
 /// High-level information about the photometric solutions associated
 /// with a plate.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct PlatesPhotometryData {
     pub median_colorterm_apass: Option<f32>,

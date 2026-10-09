@@ -14,7 +14,7 @@
 use serde::Deserialize;
 
 /// A record in a reference catalog, i.e. a star.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct RefcatItemRecord {
     pub gsc_bin_index: u32,
@@ -40,7 +40,7 @@ pub struct RefcatItemRecord {
 }
 
 /// Information about the lightcurve database information associated with a star.
-#[derive(Deserialize)]
+#[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct RefcatPhotRecord {
     pub count: u32,

@@ -85,7 +85,7 @@ pub struct LimitsPlateRecord {
 #[derive(BinarySerde, Debug, PartialEq)]
 pub struct LimitsIndexRecord {
     pub byte_offset: u64,
-    byte_length: u64,
+    pub byte_length: u64,
 }
 
 // / Given a sky position, retrieve the limiting-magnitude data associated with
