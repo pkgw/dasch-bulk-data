@@ -87,7 +87,12 @@ fn main() -> Result<(), Box<dyn Error>> {
     // meaningful if read_to_end is false.
 
     let read_to_end = ofs2 < ofs1;
-    let rec_count = (ofs2 - ofs1) as usize / MagRecord::SERIALIZED_SIZE;
+
+    let rec_count = if read_to_end {
+        0
+    } else {
+        (ofs2 - ofs1) as usize / MagRecord::SERIALIZED_SIZE
+    };
 
     // Now process the actual phot data
 
